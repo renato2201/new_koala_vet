@@ -2,9 +2,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, install Bun , insall dependencies and run the development server:
 
 ```bash
+powershell -c "irm bun.sh/install.ps1 | iex"
 bun install
 bun dev
 ```
