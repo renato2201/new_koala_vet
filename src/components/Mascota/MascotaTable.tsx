@@ -10,16 +10,25 @@ import {
 
 import { getPets } from './functions';
 
-const getPetSpecie = async ({ id }: { id: number }) => {
-	const res = await fetch(`http://localhost:8000/species/${id}`);
+const BASE_URL = process.env.BASE_URL;
+
+const getPetSpecie = async ({ id }: { id: string }) => {
+	const res = await fetch(`${BASE_URL}/species/${id}`);
 	const data = await res.json();
 	return data;
 };
-const getPetBreed = async ({ id }: { id: number }) => {
-	const res = await fetch(`http://localhost:8000/breeds/${id}`);
+const getPetBreed = async ({ id }: { id: string }) => {
+	const res = await fetch(`${BASE_URL}/breeds/${id}`);
 	const data = await res.json();
 	return data;
 };
+
+const getPetGender = async ({ id }: { id: string }) => {
+	const res = await fetch(`${BASE_URL}/pet_gender/${id}`);
+	const data = await res.json();
+	return data;
+};
+
 export async function MascotaTable() {
 	const pets = await getPets();
 
@@ -34,6 +43,7 @@ export async function MascotaTable() {
 					<TableHead>Edad</TableHead>
 					<TableHead>Especie</TableHead>
 					<TableHead>Raza</TableHead>
+					<TableHead>Sexo</TableHead>
 
 					<TableHead className="text-right" />
 				</TableRow>
@@ -50,6 +60,9 @@ export async function MascotaTable() {
 						</TableCell>
 						<TableCell>
 							{getPetBreed({ id: pet.breed }).then((breed) => breed.name)}
+						</TableCell>
+						<TableCell>
+							{getPetGender({ id: pet.gender }).then((gender) => gender.gender)}
 						</TableCell>
 					</TableRow>
 				))}

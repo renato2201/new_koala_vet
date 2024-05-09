@@ -3,19 +3,16 @@
 	"organizeImports": {
 		"enabled": true
 	},
-	"javascript":{
-		"formatter":{
-			"quoteStyle":"single",
-			"trailingComma":"es5"
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"trailingComma": "es5"
 		}
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true,
-			"correctness":{
-				"noUnusedImports":"error"
-			}
+			"recommended": true
 		}
 	}
 }
