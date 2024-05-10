@@ -2,7 +2,12 @@ import { ClientTable, ClienteBreadCrumb } from '@/components/Client';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import Loading from './loading';
+import Loading from '@/app/dashboard/clientes/loading';
+
+export const metadata = {
+	title: 'Clientes',
+	description: 'Lista de Clientes',
+};
 
 export default function ClientePage() {
 	return (

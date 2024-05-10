@@ -10,12 +10,13 @@ export interface Clients {
 	district: string;
 }
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
 export const getClients = async (): Promise<Clients[]> => {
 	const res = await fetch(`${BASE_URL}/clients/`, {
 		cache: 'no-cache',
 	});
+
 	const data = await res.json();
 	return data;
 };

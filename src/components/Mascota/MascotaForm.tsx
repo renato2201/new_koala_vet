@@ -132,7 +132,6 @@ export function PetForm() {
 			age: Number(data.age),
 			id: (pets.length + 1).toString(),
 		};
-		console.log(newData);
 		try {
 			await createPet(newData);
 			toast({

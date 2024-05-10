@@ -1,6 +1,13 @@
+import Loading from '@/app/dashboard/mascotas/loading';
 import { MascotaBreadCrumb, MascotaTable } from '@/components/Mascota';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Suspense } from 'react';
+
+export const metadata = {
+	title: 'Mascotas',
+	description: 'Lista de Mascotas',
+};
 
 export default function NamePage() {
 	return (
@@ -14,9 +21,9 @@ export default function NamePage() {
 					<Link href={'/dashboard/crearMascota'}>Nuevo</Link>
 				</Button>
 			</div>
-			{/* <Suspense fallback={<Loading />}> */}
-			<MascotaTable />
-			{/* </Suspense> */}
+			<Suspense fallback={<Loading />}>
+				<MascotaTable />
+			</Suspense>
 		</div>
 	);
 }

@@ -28,7 +28,7 @@ export interface PetGenders {
 	gender: string;
 }
 
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
 export const getPets = async (): Promise<Pets[]> => {
 	const res = await fetch(`${BASE_URL}/pets/`, {

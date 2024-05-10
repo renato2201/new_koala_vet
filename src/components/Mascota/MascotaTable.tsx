@@ -34,7 +34,7 @@ export async function MascotaTable() {
 
 	return (
 		<Table>
-			<TableCaption>Una lista de tus clientes.</TableCaption>
+			<TableCaption>Una lista de las mascotas registradas.</TableCaption>
 			<TableHeader>
 				<TableRow>
 					<TableHead className="w-[100px]">Nombre</TableHead>
